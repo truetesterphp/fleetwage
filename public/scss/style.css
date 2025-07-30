@@ -1,0 +1,2038 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Heavy.eot");
+  src: url("fonts/Gilroy-Heavy.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-Heavy.woff2") format("woff2"), url("fonts/Gilroy-Heavy.woff") format("woff"), url("fonts/Gilroy-Heavy.ttf") format("truetype"), url("fonts/Gilroy-Heavy.svg#Gilroy-Heavy") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Light.eot");
+  src: url("fonts/Gilroy-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-Light.woff2") format("woff2"), url("fonts/Gilroy-Light.woff") format("woff"), url("fonts/Gilroy-Light.ttf") format("truetype"), url("fonts/Gilroy-Light.svg#Gilroy-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Medium.eot");
+  src: url("fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-Medium.woff2") format("woff2"), url("fonts/Gilroy-Medium.woff") format("woff"), url("fonts/Gilroy-Medium.ttf") format("truetype"), url("fonts/Gilroy-Medium.svg#Gilroy-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Regular.eot");
+  src: url("fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-Regular.woff2") format("woff2"), url("fonts/Gilroy-Regular.woff") format("woff"), url("fonts/Gilroy-Regular.ttf") format("truetype"), url("fonts/Gilroy-Regular.svg#Gilroy-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-SemiBold.eot");
+  src: url("fonts/Gilroy-SemiBold.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-SemiBold.woff2") format("woff2"), url("fonts/Gilroy-SemiBold.woff") format("woff"), url("fonts/Gilroy-SemiBold.ttf") format("truetype"), url("fonts/Gilroy-SemiBold.svg#Gilroy-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-ExtraBold.eot");
+  src: url("fonts/Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-ExtraBold.woff2") format("woff2"), url("fonts/Gilroy-ExtraBold.woff") format("woff"), url("fonts/Gilroy-ExtraBold.ttf") format("truetype"), url("fonts/Gilroy-ExtraBold.svg#Gilroy-ExtraBold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Thin.eot");
+  src: url("fonts/Gilroy-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-Thin.woff2") format("woff2"), url("fonts/Gilroy-Thin.woff") format("woff"), url("fonts/Gilroy-Thin.ttf") format("truetype"), url("fonts/Gilroy-Thin.svg#Gilroy-Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-Bold.eot");
+  src: url("fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Gilroy-Bold.woff2") format("woff2"), url("fonts/Gilroy-Bold.woff") format("woff"), url("fonts/Gilroy-Bold.ttf") format("truetype"), url("fonts/Gilroy-Bold.svg#Gilroy-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Gilroy" !important;
+  width: 100%;
+  height: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.dashboard-main {
+  display: flex;
+  height: 100vh;
+  transition: 0.3s;
+}
+.dashboard-main .sidebar-main {
+  position: relative;
+}
+.dashboard-main .sidebar-main .sidebar-collaps-btn {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 8px;
+  top: 24px;
+  z-index: 9;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #ffffff;
+  box-shadow: 0 2 8px 0 rgba(0, 0, 0, 0.0588235294);
+}
+.dashboard-main .sidebar-main .collapse-btn {
+  right: -14px;
+  transform: rotate(180deg);
+}
+.dashboard-main .sidebar {
+  width: 201px;
+  background: #ffffff;
+  border-right: 1px solid #E8EBED;
+  padding: 0px;
+  height: 100vh;
+  transition: 0.3s;
+  overflow: auto;
+}
+.dashboard-main .sidebar .logo {
+  padding: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  max-width: 100%;
+  position: relative;
+  padding-right: 50px;
+}
+.dashboard-main .sidebar .logo a {
+  display: block;
+  width: 100%;
+  max-width: 130px;
+  vertical-align: middle;
+}
+.dashboard-main .sidebar .logo a img {
+  width: 100%;
+  transition: 0.3s;
+}
+.dashboard-main .sidebar .logo a .maobail-logo {
+  display: none;
+}
+.dashboard-main .sidebar .menu-bar {
+  display: none;
+}
+.dashboard-main .sidebar .menu {
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: calc(100% - 72px);
+  width: 100%;
+  flex-direction: column;
+  min-height: 650px;
+  gap: 30px;
+  transition: 0.3s;
+}
+.dashboard-main .sidebar .menu > div {
+  width: 100%;
+}
+.dashboard-main .sidebar .menu > div .menu-title {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: #717E94;
+  transition: 0.3s;
+}
+.dashboard-main .sidebar .menu > div .menu-list {
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+.dashboard-main .sidebar .menu > div .menu-list:last-child {
+  margin-bottom: 0;
+}
+.dashboard-main .sidebar .menu > div .menu-list li {
+  margin-bottom: 2px;
+}
+.dashboard-main .sidebar .menu > div .menu-list li a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #344054;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  color: #344054;
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.dashboard-main .sidebar .menu > div .menu-list li a .menu-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-main .sidebar .menu > div .menu-list li a .menu-icon .blue-icon-img {
+  display: none;
+}
+.dashboard-main .sidebar .menu > div .menu-list li a:hover {
+  background-color: #EBF0FE;
+}
+.dashboard-main .sidebar .menu > div .menu-list li a:hover .blue-icon-img {
+  display: inline;
+}
+.dashboard-main .sidebar .menu > div .menu-list li a:hover .menu-icon > img {
+  display: none;
+}
+.dashboard-main .sidebar .menu > div .menu-list li.active a {
+  background-color: #EBF0FE;
+}
+.dashboard-main .sidebar .menu > div .menu-list li.active a .blue-icon-img {
+  display: inline;
+}
+.dashboard-main .sidebar .menu > div .menu-list li.active a .menu-icon > img {
+  display: none;
+}
+.dashboard-main .sidebar .menu > div.bottom-menu .menu-title {
+  padding: 8px 12px;
+}
+.dashboard-main .short-sidebar {
+  width: 100px;
+}
+.dashboard-main .short-sidebar .logo {
+  padding: 18px 10px;
+}
+.dashboard-main .short-sidebar .logo a {
+  max-width: auto;
+  text-align: center;
+}
+.dashboard-main .short-sidebar .logo a .desktop-logo {
+  display: none;
+}
+.dashboard-main .short-sidebar .logo a .maobail-logo {
+  display: block;
+  width: 30px;
+  text-align: center;
+  margin: auto;
+}
+.dashboard-main .short-sidebar .menu > div .menu-list li a {
+  font-size: 0;
+  justify-content: center;
+}
+.dashboard-main .short-sidebar .menu > div .menu-title {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  text-align: center !important;
+}
+.dashboard-main .content {
+  width: calc(100% - 201px);
+  transition: 0.3s;
+}
+.dashboard-main .content .top-bar {
+  padding: 16px 20px;
+}
+.dashboard-main .content .top-bar .top-bar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.dashboard-main .content .top-bar .top-bar-row .breadcrumb-list .breadcrumb {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.dashboard-main .content .top-bar .top-bar-row .breadcrumb-list .breadcrumb li {
+  font-family: "Gilroy";
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #344054;
+}
+.dashboard-main .content .top-bar .top-bar-row .breadcrumb-list .breadcrumb li i {
+  color: #8D98A9;
+}
+.dashboard-main .content .top-bar .top-bar-row .breadcrumb-list .breadcrumb li a {
+  font-family: "Gilroy";
+  color: #344054;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  padding: 2px 8px;
+  background-color: #F6F6F6;
+}
+.dashboard-main .content .top-bar .top-bar-row .breadcrumb-list .breadcrumb .active a {
+  color: #1D1858;
+}
+.dashboard-main .content .top-bar .top-bar-row .user-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.dashboard-main .content .top-bar .top-bar-row .user-avatar .notification a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #F6F6F6;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #344054;
+  position: relative;
+}
+.dashboard-main .content .top-bar .top-bar-row .user-avatar .notification a .notification-number {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #FC5371;
+}
+.dashboard-main .content .top-bar .top-bar-row .user-avatar .profile-col {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dashboard-main .content .top-bar .top-bar-row .user-avatar .profile-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .inner-content-main {
+  padding: 0 20px;
+  height: calc(100% - 68px);
+  overflow-x: auto;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0px;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .left-controls {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #344054;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range .past-dat-icon,
+.dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range .future-dat-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #8D98A9;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .left-controls .dropdown.btn {
+  background-color: transparent;
+  border: 0 solid #D4D9DE;
+  padding: 0;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .left-controls .dropdown.btn .day-dropdown {
+  border-radius: 8px;
+  color: #344054;
+  padding: 8px 12px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  gap: 8px;
+  transition: 0.3s;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #D4D9DE;
+  padding-right: 35px;
+  font-weight: 500;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls {
+  width: calc(100% + 400px);
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .search-col {
+  position: relative;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .search-col form span.controls-icons {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .search-col form input {
+  background-color: transparent;
+  border: 1px solid #D4D9DE;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  padding: 8px 12px 8px 36px;
+  border-radius: 8px;
+  color: #8D98A9;
+  font-family: "Gilroy";
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li i {
+  color: #D4D9DE;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .controls-icons {
+  font-size: 16px;
+  color: #717E94;
+  width: 16px;
+  height: 16px;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .btn {
+  color: #8D98A9;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .filter-active-btn {
+  border-color: #4253F0;
+  box-shadow: 0 0 0 2px rgba(66, 83, 240, 0.1607843137);
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col {
+  position: relative;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col .filter-form {
+  background-color: transparent;
+  min-width: 400px;
+  right: 24px;
+  width: auto;
+  height: auto;
+  left: auto;
+  top: calc(100% + 4px);
+  box-shadow: 0 0 32px 6px rgba(29, 24, 88, 0.0784313725);
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col .filter-form .form-overlay {
+  background-color: transparent;
+  padding: 0;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col .show-form {
+  display: block;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .option-box {
+  position: absolute;
+  min-width: 181px;
+  right: 0;
+  top: calc(100% + 10px);
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  display: none;
+  justify-content: flex-start;
+  gap: 0;
+  flex-direction: column;
+  box-shadow: 0 0 32px 6px rgba(29, 24, 88, 0.0784313725);
+  z-index: 9;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .option-box li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #1D1858;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .option-box li a:hover {
+  background-color: #EBF0FE;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .option-box li a .export-icons {
+  width: 20px;
+  height: 20px;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li .option-box li a .export-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.smart-col {
+  position: relative;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.smart-col .btn {
+  color: #4253F0;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.smart-col .btn img {
+  transition: 0.3s;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.smart-col .smart-option {
+  display: none;
+  min-width: 253px;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.smart-col .smart-option.active-smart-option {
+  display: flex;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.export-col {
+  position: relative;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.export-col .btn {
+  color: #ffffff;
+  background-color: #4253F0;
+  cursor: pointer;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.export-col .export-option {
+  display: none;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul li.export-col .export-option.active-option {
+  display: flex;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .btn {
+  background-color: transparent;
+  border: 1px solid #D4D9DE;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #344054;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .btn:hover {
+  background-color: #4253F0;
+  border: 1px solid #4253F0;
+  color: #ffffff !important;
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .btn:hover .controls-icons img {
+  filter: brightness(100);
+}
+.dashboard-main .content .inner-content-main .inner-top-controls .day-dropdown {
+  padding-right: 35px;
+  background-image: url(../images/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 50%;
+  outline: none;
+}
+.dashboard-main .content .top-details-sec {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px;
+  border: 1px solid #E8EBED;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.dashboard-main .content .top-details-sec .manager {
+  display: flex;
+  align-items: center;
+  width: 248px;
+  padding-right: 16px;
+  gap: 12px;
+  cursor: pointer;
+}
+.dashboard-main .content .top-details-sec .manager .manager-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dashboard-main .content .top-details-sec .manager .manager-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .top-details-sec .manager .manager-details h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1D1858;
+  line-height: 20px;
+}
+.dashboard-main .content .top-details-sec .manager .manager-details p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #717E94;
+}
+.dashboard-main .content .top-details-sec .details-right-col {
+  width: calc(100% - 248px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box {
+  width: calc(20% - 12.8px);
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box .item-title {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box .item-title .item-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBF0FE;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box .item-title .item-img img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box .item-title p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  color: #1D1858;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box.shifts-col .item-title .item-img {
+  background-color: #F9EBF2;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box.standby-col .item-title .item-img {
+  background-color: #F0FAF5;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box.training-col .item-title .item-img {
+  background-color: #FEF8EC;
+}
+.dashboard-main .content .top-details-sec .details-right-col .detail-box.truck-col .item-title .item-img {
+  background-color: #F6F3FE;
+}
+.dashboard-main .content .top-details-sec .right-full-col {
+  width: 100%;
+}
+.dashboard-main .content .schedule-table {
+  background: #ffffff;
+  border-radius: 0.5rem;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table thead {
+  background-color: #E8EBED;
+  font-weight: 600;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table thead th {
+  color: #717E94;
+  background: #E8EBED;
+  padding: 10px 12px;
+  font-size: 12px;
+  text-align: left;
+  line-height: 16px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr {
+  border-top: 1px solid #E8EBED;
+  position: relative;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr:hover {
+  background-color: #EBF0FE;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.profile-details-url {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 99;
+  padding: 0px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.profile-details-url a.avatar-details-link {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #1D1858;
+  font-weight: 500;
+  font-family: "Gilroy";
+  line-height: 20px;
+  vertical-align: middle;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.dots {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td .status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td .status .alert {
+  color: #e63946;
+  font-size: 16px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td .status .ok {
+  color: #2ca65a;
+  font-size: 16px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: relative;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar .avatar-img-outer {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar::after {
+  width: 10px;
+  height: 10px;
+  content: "";
+  border: 0.5px solid #ffffff;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-color: #D4D9DE;
+  border-radius: 50%;
+  display: none;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar.before-online::after {
+  display: inline;
+  background-color: #D4D9DE;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar.online::after {
+  display: inline;
+  background-color: #16AB6D;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar.offline::after {
+  display: inline;
+  background-color: #FC5371;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .avatar-details h5 {
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 500;
+  color: #1D1858;
+  line-height: 20px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .avatar-details .role {
+  font-family: "Gilroy";
+  font-size: 12px;
+  font-weight: 500;
+  color: #717E94;
+  line-height: 16px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .shifts .shifts-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .shifts .shifts-status .status-alert {
+  font-size: 10px;
+  color: #FC5371;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .shifts .shifts-status .status-ok {
+  font-size: 10px;
+  color: #16AB6D;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .dots-col {
+  min-width: 37px;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .dots-col .dots-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .dots-col .dots-row .dot {
+  width: 2px;
+  height: 2px;
+  background-color: #717E94;
+  border-radius: 50%;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table tbody tr .dots-col .dots-row .dot:hover {
+  color: #4253F0;
+}
+.dashboard-main .content .schedule-table .schedule-table-inner table .t-center {
+  text-align: center;
+}
+.dashboard-main .content .schedule-table .calendar-container {
+  padding: 0px;
+  background-color: #ffffff;
+}
+.dashboard-main .content .schedule-table .route-calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+.dashboard-main .content .schedule-table .route-calendar th,
+.dashboard-main .content .schedule-table .route-calendar td {
+  border: 1px solid #E8EBED;
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 12px;
+}
+.dashboard-main .content .schedule-table .route-calendar .draggable-item {
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+.dashboard-main .content .schedule-table .route-calendar .blank-col {
+  position: relative;
+}
+.dashboard-main .content .schedule-table .route-calendar .blank-col:empty {
+  padding: 0px;
+  background-image: url(../images/blankbox-line.png);
+  background-repeat: repeat;
+  background-size: auto;
+}
+.dashboard-main .content .schedule-table .route-calendar .blank-col .blank-box {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.dashboard-main .content .schedule-table .route-calendar .blank-col .blank-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dashboard-main .content .schedule-table .route-calendar .day-col-row {
+  display: flex;
+  gap: 16px;
+  min-height: 60px;
+}
+.dashboard-main .content .schedule-table .route-calendar .day-col-row > div {
+  width: 50%;
+  margin-bottom: 0 !important;
+}
+.dashboard-main .content .schedule-table .route-calendar thead .table-left-title {
+  text-align: left;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th {
+  background-color: #F6F6F6;
+  font-weight: 500;
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Gilroy";
+  text-align: center;
+  padding: 10px 12px;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .rout-date {
+  display: inline-block;
+  margin-right: 8px;
+  color: #717E94;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-alert {
+  position: relative;
+  display: inline-flex;
+  gap: 2px;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-alert .alert-icon {
+  color: #FC5371;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-alert .rout-number {
+  color: #FC5371;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Gilroy";
+  font-weight: 500;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-alert .alert-tuol-tip {
+  position: absolute;
+  background-color: #1D1858;
+  color: #E8EBED;
+  text-align: center;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 8px;
+  box-shadow: 10px 20px 60px 0 rgba(32, 32, 32, 0.0784313725);
+  min-width: 130px;
+  width: 100%;
+  top: calc(-100% - 20px);
+  left: 25%;
+  transform: translate(-50%);
+  display: none;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-alert .alert-tuol-tip::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 22px;
+  background-color: #1D1858;
+  border-radius: 2px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  top: 7px;
+  z-index: -4;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-alert:hover .alert-tuol-tip {
+  display: inline-block;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .route-ok .ok-icon {
+  color: #16AB6D;
+  margin-left: 4px;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .rout-number {
+  display: inline-block;
+}
+.dashboard-main .content .schedule-table .route-calendar thead th .rout-number:empty {
+  display: none;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .dispatch {
+  background-color: #fbfbfb;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col {
+  padding: 10px 40px 10px 12px;
+  position: relative;
+  transition: 0.3s;
+  vertical-align: middle;
+  min-width: 150px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .routes-col-icon {
+  width: 24px;
+  height: 24px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .routes-col-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .routes-col-content {
+  width: calc(100% - 32px);
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .routes-col-content h5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Gilroy";
+  color: #1D1858;
+  font-weight: 500;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .routes-col-content .location {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Gilroy";
+  color: #8D98A9;
+  font-weight: 500;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .trigger-option {
+  width: 24px;
+  height: 24px;
+  background-color: #EBF0FE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .option-box {
+  position: absolute;
+  min-width: 181px;
+  right: 0;
+  top: 70%;
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  display: none;
+  justify-content: flex-start;
+  gap: 0;
+  flex-direction: column;
+  box-shadow: 0 0 32px 6px rgba(29, 24, 88, 0.0784313725);
+  z-index: 9;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .option-box li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #1D1858;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .option-box li a:hover {
+  background-color: #EBF0FE;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .option-box li a .export-icons {
+  width: 20px;
+  height: 20px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .option-box li a .export-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col .routes-col-row .edit-active {
+  display: inline-block;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col:hover {
+  background-color: #F6F6F6;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col:hover .trigger-option {
+  opacity: 1;
+  visibility: visible;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col-active {
+  background-color: #F6F6F6;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr td.routes-col-active .routes-col-row .trigger-option {
+  opacity: 1;
+  visibility: visible;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box {
+  background-color: #F6F6F6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #D4D9DE;
+  position: relative;
+  margin-bottom: 4px;
+  min-width: 132px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box:last-child {
+  margin-bottom: 0;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-box-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-box-content h6 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #344054;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-box-content span {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: rgba(11, 8, 37, 0.4);
+  padding: 8px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li a {
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li a:hover {
+  background-color: #1D1858;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li a:hover img {
+  filter: brightness(1000);
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li .active-option {
+  background-color: #1D1858;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li .active-option img {
+  filter: brightness(1000);
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-edit {
+  position: relative;
+  z-index: 9;
+  margin-right: 4px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-trash {
+  position: relative;
+  z-index: 9;
+  margin-right: 4px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .driver-routes-trash {
+  position: relative;
+  z-index: 9;
+  margin-right: 4px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-move {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-move a::before {
+  content: "";
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-add {
+  position: relative;
+  z-index: 9;
+  margin-left: 0px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box:hover .routes-option {
+  visibility: visible;
+  opacity: 1;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .show-routes-option {
+  visibility: visible;
+  opacity: 1;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .manager-box {
+  border-color: #9D5DFE;
+  background-color: #F6F0FF;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .training-box {
+  border-color: #F1DE6A;
+  background-color: #FFFDF2;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned {
+  background-color: #FCEEF5;
+  color: #FC5371;
+  font-weight: 500;
+  vertical-align: middle;
+  position: relative;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .not-assigned-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .not-assigned-content .assigned-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: 0.3s;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .not-assigned-content .assigned-title h6 {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Gilroy";
+  color: #FC5371;
+  line-height: 16px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Gilroy";
+  color: #ffffff;
+  line-height: 16px;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn span {
+  display: none;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn .assing-text {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Gilroy";
+  color: #ffffff;
+  line-height: 16px;
+  text-decoration: none;
+  background-color: #4253F0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  max-width: 97px;
+  min-width: 97px;
+  text-align: center;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned:hover .not-assigned-content .assign-btn {
+  opacity: 1;
+  visibility: visible;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned:hover .not-assigned-content .assigned-title {
+  opacity: 0;
+  visibility: hidden;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box {
+  position: absolute;
+  min-width: 181px;
+  left: 50%;
+  top: 80%;
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  display: none;
+  justify-content: flex-start;
+  gap: 0;
+  flex-direction: column;
+  box-shadow: 0 0 32px 6px rgba(29, 24, 88, 0.0784313725);
+  z-index: 99;
+  transform: translateX(-50%);
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #1D1858;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a:hover {
+  background-color: #EBF0FE;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a .export-icons {
+  width: 20px;
+  height: 20px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a .export-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-active {
+  display: inline-block;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn .fa-chevron-down {
+  transition: 0.3s;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody tr .assign-col-active .assign-btn .fa-chevron-down {
+  transform: rotate(180deg);
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .add-routes-outer td .add-routes {
+  border: 0px;
+  background-color: transparent;
+  display: flex;
+  gap: 4px;
+  padding: 10px 0px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  color: #717E94;
+  font-weight: 500;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .add-routes-outer td .add-routes i {
+  font-size: 16px;
+  font-weight: 400;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .driver-box {
+  border-color: #16AB6D;
+  background-color: #F0FAF5;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers {
+  margin-bottom: 4px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers:last-child {
+  margin-bottom: 0px;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers .add-drivers-btn-1 {
+  background-color: #F6F6F6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #D4D9DE;
+  position: relative;
+  transition: 0.3s;
+  min-width: 132px;
+  text-align: center;
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+  color: #344054;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  justify-content: center;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers .add-drivers-btn-1 .add-drivers-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .routes-option .routes-edit-option .routes-add {
+  display: none;
+}
+.dashboard-main .content .schedule-table .week-table,
+.dashboard-main .content .schedule-table .day-table {
+  display: none;
+}
+.dashboard-main .content .schedule-table .week-table-show {
+  display: block;
+}
+.dashboard-main .content .schedule-table .day-table-show {
+  display: block;
+}
+.dashboard-main .content .form-outer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  font-family: "Gilroy";
+  z-index: 99;
+}
+.dashboard-main .content .form-outer .form-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29, 24, 88, 0.3019607843);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 0px 20px 0px;
+  position: relative;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: -16px;
+  width: calc(100% + 32px);
+  height: 1px;
+  background-color: #E8EBED;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-header h2 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #1D1858;
+  font-weight: 500;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-header .close-btn {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #717E94;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #717E94;
+  font-size: 10px;
+  background-color: transparent;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body {
+  padding: 12px 0;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .publish-shift-content h3 {
+  font-size: 20px;
+  color: #1D1858;
+  line-height: 28px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .publish-shift-content p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #344054;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .publish-shift-content .notification-options {
+  margin-top: 16px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .publish-shift-content .notification-options p {
+  color: #1D1858;
+  margin-bottom: 8px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer .chack-col {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer .chack-col input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 0;
+  z-index: 1;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer .chack-col .checkmark {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+  width: 16px;
+  background-color: #ffffff;
+  border: 2px solid #D4D9DE;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer .chack-col input[type=checkbox]:checked ~ .checkmark {
+  background-color: #4253F0;
+  border-color: #4253F0;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer .chack-col .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 3.5px;
+  top: 1px;
+  width: 3px;
+  height: 6px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer .chack-col input[type=checkbox]:checked ~ .checkmark::after {
+  display: block;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group label {
+  width: 100%;
+  color: #344054;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Gilroy";
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group select,
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group input,
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group textarea {
+  background-color: #ffffff;
+  border: 1px solid #D4D9DE;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Gilroy";
+  padding: 8px 12px;
+  border-radius: 8px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group select,
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group input#date {
+  background-image: url(../images/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) 50%;
+  padding-right: 30px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group textarea {
+  min-height: 70px;
+  resize: none;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group:last-child {
+  margin-bottom: 0;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group .add-employee-btn {
+  font-size: 14px;
+  color: #4253F0;
+  line-height: 20px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group .with-icon {
+  position: relative;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group .with-icon .input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group .with-icon input {
+  padding-left: 40px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-row {
+  display: flex;
+  gap: 0 16px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-row .form-group {
+  margin-bottom: 16px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .schedule-group {
+  position: relative;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .schedule-group > label {
+  padding-right: 66px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .schedule-group .chack-box-outer {
+  padding-top: 12px;
+  gap: 22px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .schedule-group .chack-box-outer .all-chack {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .user-list .user-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0;
+  padding-right: 40px;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .user-list .user-item .chack-box-outer {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .user-list .user-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .user-list .user-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .user-list .user-info h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1D1858;
+  line-height: 20px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-body .user-list .user-info p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #717E94;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer {
+  padding: 16px 0 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .right-footer {
+  display: inline-flex;
+  gap: 4px;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -16px;
+  width: calc(100% + 32px);
+  height: 1px;
+  background-color: #E8EBED;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer > button {
+  width: calc(50% - 4px);
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .light-btn {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  background-color: #ffffff;
+  border: 1px solid #D4D9DE;
+  color: #344054;
+  text-align: center;
+  border-radius: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .light-btn:hover {
+  background-color: #4253F0;
+  border: 1px solid #4253F0;
+  color: #ffffff;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .dark-btn {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  background-color: #4253F0;
+  border: 1px solid #D4D9DE;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .dark-btn:hover {
+  background-color: #ffffff;
+  border: 1px solid #4253F0;
+  color: #344054;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .delete-shift {
+  background-color: transparent;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #FC5371;
+  cursor: pointer;
+}
+.dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .add-new-employee-btn {
+  background-color: transparent;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #344054;
+  cursor: pointer;
+}
+.dashboard-main .content .publish-shift-form,
+.dashboard-main .content .add-route-form,
+.dashboard-main .content .route-manager,
+.dashboard-main .content .add-employee-form,
+.dashboard-main .content .edit-shift-form,
+.dashboard-main .content .open-shift-form,
+.dashboard-main .content .create-employee-form,
+.dashboard-main .content .add-new-drivers-form,
+.dashboard-main .content .add-new-rmployee-form {
+  display: none;
+}
+.dashboard-main .content .add-employee-form .form-modal .form-modal-inner .form-body .schedule-group {
+  margin-bottom: 16px !important;
+}
+.dashboard-main .content .add-employee-form .form-modal .form-modal-inner .form-body .schedule-group .chack-box-outer {
+  gap: 12px;
+}
+.dashboard-main .content .show-form {
+  display: block;
+}
+
+.collapse-main .content {
+  width: calc(100% - 100px);
+}
+
+.ui-state-hover {
+  background-color: #e7e7e7 !important;
+}
+
+@media (max-width: 1280px) {
+  .dashboard-main .content .inner-content-main .inner-top-controls .left-controls {
+    gap: 8px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range {
+    font-size: 16px;
+    line-height: 24px;
+    gap: 4px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .search-col form input {
+    width: 100%;
+    max-width: 170px;
+  }
+}
+@media (max-width: 1199px) {
+  .dashboard-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100vh;
+  }
+  .dashboard-main .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 12px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dashboard-main .sidebar .logo {
+    padding: 0px;
+  }
+  .dashboard-main .sidebar .menu-bar {
+    display: inline-block;
+  }
+  .dashboard-main .sidebar .menu-bar .open-icon {
+    font-size: 18px;
+  }
+  .dashboard-main .sidebar .menu-bar .close-icon {
+    font-size: 18px;
+    display: none;
+  }
+  .dashboard-main .sidebar .active-menu .open-icon {
+    display: none;
+  }
+  .dashboard-main .sidebar .active-menu .close-icon {
+    display: inline-block;
+  }
+  .dashboard-main .sidebar .menu {
+    height: auto;
+    min-height: auto;
+    display: none;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .dashboard-main .content {
+    width: 100%;
+  }
+  .dashboard-main .content .top-bar {
+    padding: 12px 15px;
+  }
+  .dashboard-main .content .inner-content-main {
+    padding: 0px 15px;
+    overflow-x: auto;
+  }
+  .dashboard-main .content .inner-content-main > div {
+    min-width: 950px;
+  }
+  .dashboard-main .content .inner-content-main > div .manager {
+    width: 208px;
+  }
+  .dashboard-main .content .inner-content-main > div .details-right-col {
+    width: calc(100% - 208px);
+    gap: 10px;
+  }
+  .dashboard-main .content .inner-content-main > div .details-right-col .detail-box {
+    width: calc(20% - 8px);
+  }
+  .dashboard-main .content .inner-content-main > div .details-right-col .detail-box .item-title {
+    gap: 4px;
+  }
+  .dashboard-main .content .inner-content-main > div .right-full-col {
+    width: 100%;
+  }
+  .dashboard-main .sidebar-main {
+    width: 100%;
+  }
+  .dashboard-main .sidebar-main .sidebar-collaps-btn {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .dashboard-main .content .inner-content-main .inner-top-controls .left-controls {
+    max-width: 320px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range {
+    font-size: 14px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range .past-dat-icon,
+  .dashboard-main .content .inner-content-main .inner-top-controls .left-controls .date-range .future-dat-icon {
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .btn {
+    font-size: 12px;
+    padding: 8px 10px;
+    line-height: 16px;
+    gap: 5px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .btn .day-dropdown {
+    padding: 8px 10px;
+    padding-right: 29px !important;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col .filter-form {
+    min-width: 330px;
+  }
+  .dashboard-main .content .inner-content-main > div {
+    min-width: 870px;
+  }
+  .dashboard-main .content .inner-content-main .manager {
+    width: 180px;
+    gap: 8px;
+  }
+  .dashboard-main .content .inner-content-main .manager .manager-img {
+    width: 34px;
+    height: 34px;
+  }
+  .dashboard-main .content .inner-content-main .manager .manager-details h5 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .inner-content-main .manager .manager-details p {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .dashboard-main .content .inner-content-main .details-right-col {
+    width: calc(100% - 180px);
+    gap: 10px;
+  }
+  .dashboard-main .content .inner-content-main .details-right-col .detail-box {
+    width: calc(20% - 8px);
+  }
+  .dashboard-main .content .inner-content-main .details-right-col .detail-box .item-title {
+    gap: 4px;
+  }
+  .dashboard-main .content .inner-content-main .details-right-col .detail-box .item-title .item-img {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+  .dashboard-main .content .inner-content-main .details-right-col .detail-box .item-title p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .inner-content-main .details-right-col .detail-box h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .dashboard-main .content .schedule-table .schedule-table-inner table thead th {
+    padding: 10px 8px;
+  }
+  .dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td {
+    padding: 10px 8px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .responsible-avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .avatar-details-outer .avatar-details h5 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .schedule-table .schedule-table-inner table tbody tr td.responsible .avatar-details-outer .avatar-details p {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-header {
+    padding-bottom: 12px;
+    padding-top: 0;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-header h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group select,
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group input,
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-group textarea {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 10px;
+    padding-right: 30px;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-body .chack-box-outer {
+    flex-wrap: wrap;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .light-btn {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-footer .dark-btn {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col .filter-form {
+    min-width: 280px;
+  }
+  .dashboard-main .content .form-outer .form-overlay .form-modal .form-body .form-row {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
