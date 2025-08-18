@@ -1623,324 +1623,6 @@ a {
                             }
                         }
 
-                        .routes-box {
-                            background-color: $light-white;
-                            padding: $padding-2*2 $padding-2*4;
-                            border-radius: $border-r-2*3;
-                            border: 1px solid #D4D9DE;
-                            position: $position-relative;
-                            margin-bottom: $margin-2*2;
-                            min-width: 132px;
-                            // z-index: 99;
-
-                            &:last-child {
-                                margin-bottom: 0;
-                            }
-
-                            .routes-box-content {
-                                width: $w-100;
-                                display: $flex-display;
-                                flex-direction: $flex-column;
-
-                                h6 {
-                                    font-size: $font-2*6;
-                                    line-height: $line-h-16;
-                                    font-weight: $font-medium;
-                                    color: #344054;
-                                }
-
-                                span {
-                                    font-size: $font-2*6;
-                                    line-height: $line-h-16;
-                                    font-weight: $font-medium;
-                                }
-                            }
-
-                            .routes-option {
-                                position: $position-absolute;
-                                top: $position-move-0;
-                                left: $position-move-0;
-                                width: $w-100;
-                                height: $h-100;
-                                border-radius: $border-r-2*3;
-                                background-color: #0B082566;
-                                padding: $padding-2*4;
-                                visibility: hidden;
-                                opacity: 0;
-                                transition: 0.3s;
-
-                                .routes-edit-option {
-                                    display: $flex-display;
-                                    justify-content: $justify-center;
-                                    align-items: $align-center;
-
-
-                                    li {
-                                        width: 24px;
-                                        height: 24px;
-                                        display: $flex-display;
-                                        justify-content: $justify-center;
-                                        align-items: $align-center;
-
-                                        a {
-                                            width: 24px;
-                                            height: 24px;
-                                            background-color: $white;
-                                            display: $flex-display;
-                                            justify-content: $justify-center;
-                                            align-items: $align-center;
-                                            padding: $padding-2*2;
-                                            border-radius: $border-r-2*2;
-
-                                            &:hover {
-                                                background-color: $blue;
-
-                                                img {
-                                                    filter: brightness(1000);
-                                                }
-                                            }
-                                        }
-
-                                        .active-option {
-                                            background-color: $blue;
-
-                                            img {
-                                                filter: brightness(1000);
-                                            }
-                                        }
-                                    }
-
-                                    .routes-edit {
-                                        position: relative;
-                                        z-index: 9;
-                                        margin-right: 4px;
-                                    }
-
-                                    .routes-trash {
-                                        position: relative;
-                                        z-index: 9;
-                                        margin-right: 4px;
-                                    }
-
-                                    .driver-routes-trash{
-                                        position: relative;
-                                        z-index: 9;
-                                        margin-right: 4px;
-                                    }
-
-                                    .routes-move {
-                                        opacity: 0;
-                                        width: 0;
-                                        height: 0;
-
-                                        a {
-                                            &::before {
-                                                content: '';
-                                                background-color: red;
-                                                width: 100%;
-                                                height: 100%;
-                                                position: absolute;
-                                                top: 0;
-                                                left: 0;
-                                                z-index: 0;
-                                            }
-                                        }
-                                    }
-
-                                    .routes-add {
-                                        position: relative;
-                                        z-index: 9;
-                                        margin-left: 0px;
-                                    }
-
-                                }
-                            }
-
-                            &:hover {
-                                .routes-option {
-                                    visibility: visible;
-                                    opacity: 1;
-                                }
-                            }
-
-                            .show-routes-option {
-                                visibility: visible;
-                                opacity: 1;
-                            }
-                        }
-
-                        .manager-box {
-                            border-color: #9D5DFE;
-                            background-color: #F6F0FF;
-                        }
-
-                        .training-box {
-                            border-color: #F1DE6A;
-                            background-color: #FFFDF2;
-                        }
-
-
-                        .not-assigned {
-                            background-color: #FCEEF5;
-                            color: $light-red;
-                            font-weight: $font-medium;
-                            vertical-align: middle;
-                            position: $position-relative;
-
-
-                            .not-assigned-content {
-                                display: $flex-display;
-                                align-items: $align-center;
-                                justify-content: $justify-center;
-                                gap: $gap-2*2;
-                                flex-direction: $flex-column;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                z-index: 9;
-                                width: $w-100;
-                                height: $h-100;
-
-                                .assigned-title {
-                                    display: $flex-display;
-                                    align-items: $align-center;
-                                    justify-content: $justify-center;
-                                    gap: $gap-2*2;
-                                    transition: 0.3s;
-
-                                    h6 {
-                                        font-size: $font-2*6;
-                                        font-weight: $font-medium;
-                                        font-family: $font-primary;
-                                        color: $light-red;
-                                        line-height: $line-h-16;
-                                    }
-                                }
-
-
-                            }
-
-                            .assign-btn {
-                                display: $flex-display;
-                                align-items: $align-center;
-                                justify-content: $justify-center;
-                                font-size: $font-2*6;
-                                font-weight: $font-medium;
-                                font-family: $font-primary;
-                                color: $white;
-                                line-height: $line-h-16;
-                                text-decoration: none;
-                                position: $position-absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: translate(-50%, -50%);
-                                opacity: 0;
-                                visibility: hidden;
-                                transition: 0.3s;
-                                width: $w-100;
-                                height: $h-100;
-
-                                span {
-                                    display: $display-none;
-                                }
-
-                                .assing-text {
-                                    display: $display-block;
-                                    font-size: $font-2*6;
-                                    font-weight: $font-medium;
-                                    font-family: $font-primary;
-                                    color: $white;
-                                    line-height: $line-h-16;
-                                    text-decoration: none;
-                                    background-color: $light-blue-two;
-                                    padding: $padding-2*3 $padding-2*4;
-                                    border-radius: $border-r-2*3;
-                                    max-width: 97px;
-                                    min-width: 97px;
-                                    text-align: $t-center;
-                                }
-                            }
-
-                            &:hover {
-                                .not-assigned-content {
-                                    .assign-btn {
-                                        opacity: 1;
-                                        visibility: visible;
-                                    }
-
-                                    .assigned-title {
-                                        opacity: 0;
-                                        visibility: hidden;
-                                    }
-                                }
-                            }
-
-                            .option-box {
-                                position: $position-absolute;
-                                min-width: 181px;
-                                left: 50%;
-                                top: 80%;
-                                background-color: $white;
-                                padding: $padding-2*4;
-                                border-radius: 12px;
-                                display: $display-none;
-                                justify-content: $justify-start;
-                                gap: 0;
-                                flex-direction: $flex-column;
-                                box-shadow: 0 0 32px 6px #1D185814;
-                                z-index: 99;
-                                transform: translateX(-50%);
-
-                                li {
-                                    a {
-                                        display: $flex-display;
-                                        align-items: $align-center;
-                                        gap: $gap-2*4;
-                                        font-size: $font-14;
-                                        line-height: $line-h-20;
-                                        font-weight: $font-medium;
-                                        color: $blue;
-                                        padding: $padding-2*4 $padding-2*6;
-                                        border-radius: $border-r-5;
-
-                                        &:hover {
-                                            background-color: $light-blue;
-
-                                        }
-
-                                        .export-icons {
-                                            width: 20px;
-                                            height: 20px;
-
-                                            img {
-                                                width: $w-100;
-                                                height: $h-100;
-                                                object-fit: $object-c;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                            .assign-active {
-                                display: $display-inline-block;
-                            }
-
-                            .assign-btn {
-                                .fa-chevron-down {
-                                    transition: 0.3s;
-                                }
-                            }
-                        }
-
-                        .assign-col-active {
-                            .assign-btn {
-                                .fa-chevron-down {
-                                    transform: rotate(180deg);
-                                }
-                            }
-                        }
                     }
 
                     .add-routes-outer {
@@ -1965,56 +1647,6 @@ a {
                         }
                     }
 
-                    .stand-drivers {
-                        td {
-                            .driver-box {
-                                border-color: #16AB6D;
-                                background-color: #F0FAF5;
-                            }
-
-                            .add-drivers {
-                                margin-bottom: $margin-2*2;
-
-                                &:last-child {
-                                    margin-bottom: $margin-0;
-                                }
-
-                                .add-drivers-btn-1 {
-                                    background-color: $light-white;
-                                    padding: $padding-2*2 $padding-2*4;
-                                    border-radius: $border-r-2*3;
-                                    border: 1px solid #D4D9DE;
-                                    position: $position-relative;
-                                    transition: 0.3s;
-                                    min-width: 132px;
-                                    text-align: $t-center;
-                                    display: $inline-flex-display;
-                                    gap: $gap-2*2;
-                                    align-items: $align-center;
-                                    width: $w-100;
-                                    color: #344054;
-                                    font-size: $font-2*6;
-                                    line-height: $line-h-16;
-                                    font-weight: $font-medium;
-                                    justify-content: $justify-center;
-
-                                    .add-drivers-icon {
-                                        display: $inline-flex-display;
-                                        align-items: $align-center;
-                                        justify-content: $justify-center;
-                                    }
-                                }
-                            }
-
-                            .routes-option {
-                                .routes-edit-option {
-                                    .routes-add {
-                                        display: $display-none;
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
 
@@ -2488,6 +2120,377 @@ a {
 
 .ui-state-hover {
     background-color: #e7e7e7 !important;
+}
+
+// 
+.routes-box {
+    background-color: $light-white;
+    padding: $padding-2*2 $padding-2*4;
+    border-radius: $border-r-2*3;
+    border: 1px solid #D4D9DE;
+    position: $position-relative;
+    margin-bottom: $margin-2*2;
+    min-width: 132px;
+    // z-index: 99;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .routes-box-content {
+        width: $w-100;
+        display: $flex-display;
+        flex-direction: $flex-column;
+
+        h6 {
+            font-size: $font-2*6;
+            line-height: $line-h-16;
+            font-weight: $font-medium;
+            color: #344054;
+        }
+
+        span {
+            font-size: $font-2*6;
+            line-height: $line-h-16;
+            font-weight: $font-medium;
+        }
+    }
+
+    .routes-option {
+        position: $position-absolute;
+        top: $position-move-0;
+        left: $position-move-0;
+        width: $w-100;
+        height: $h-100;
+        border-radius: $border-r-2*3;
+        background-color: #0B082566;
+        padding: $padding-2*4;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+
+        .routes-edit-option {
+            display: $flex-display;
+            justify-content: $justify-center;
+            align-items: $align-center;
+
+
+            li {
+                width: 24px;
+                height: 24px;
+                display: $flex-display;
+                justify-content: $justify-center;
+                align-items: $align-center;
+
+                a {
+                    width: 24px;
+                    height: 24px;
+                    background-color: $white;
+                    display: $flex-display;
+                    justify-content: $justify-center;
+                    align-items: $align-center;
+                    padding: $padding-2*2;
+                    border-radius: $border-r-2*2;
+
+                    &:hover {
+                        background-color: $blue;
+
+                        img {
+                            filter: brightness(1000);
+                        }
+                    }
+                }
+
+                .active-option {
+                    background-color: $blue;
+
+                    img {
+                        filter: brightness(1000);
+                    }
+                }
+            }
+
+            .routes-edit {
+                position: relative;
+                z-index: 9;
+                margin-right: 4px;
+            }
+
+            .routes-trash {
+                position: relative;
+                z-index: 9;
+                margin-right: 4px;
+            }
+
+            .driver-routes-trash{
+                position: relative;
+                z-index: 9;
+                margin-right: 4px;
+            }
+
+            .routes-move {
+                opacity: 0;
+                width: 0;
+                height: 0;
+
+                a {
+                    &::before {
+                        content: '';
+                        background-color: red;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 0;
+                    }
+                }
+            }
+
+            .routes-add {
+                position: relative;
+                z-index: 9;
+                margin-left: 0px;
+            }
+
+        }
+    }
+
+    &:hover {
+        .routes-option {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .show-routes-option {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.manager-box {
+    border-color: #9D5DFE;
+    background-color: #F6F0FF;
+}
+
+.training-box {
+    border-color: #F1DE6A;
+    background-color: #FFFDF2;
+}
+
+
+.not-assigned {
+    background-color: #FCEEF5;
+    color: $light-red;
+    font-weight: $font-medium;
+    vertical-align: middle;
+    position: $position-relative;
+
+
+    .not-assigned-content {
+        display: $flex-display;
+        align-items: $align-center;
+        justify-content: $justify-center;
+        gap: $gap-2*2;
+        flex-direction: $flex-column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+        width: $w-100;
+        height: $h-100;
+
+        .assigned-title {
+            display: $flex-display;
+            align-items: $align-center;
+            justify-content: $justify-center;
+            gap: $gap-2*2;
+            transition: 0.3s;
+
+            h6 {
+                font-size: $font-2*6;
+                font-weight: $font-medium;
+                font-family: $font-primary;
+                color: $light-red;
+                line-height: $line-h-16;
+            }
+        }
+
+
+    }
+
+    .assign-btn {
+        display: $flex-display;
+        align-items: $align-center;
+        justify-content: $justify-center;
+        font-size: $font-2*6;
+        font-weight: $font-medium;
+        font-family: $font-primary;
+        color: $white;
+        line-height: $line-h-16;
+        text-decoration: none;
+        position: $position-absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        width: $w-100;
+        height: $h-100;
+
+        span {
+            display: $display-none;
+        }
+
+        .assing-text {
+            display: $display-block;
+            font-size: $font-2*6;
+            font-weight: $font-medium;
+            font-family: $font-primary;
+            color: $white;
+            line-height: $line-h-16;
+            text-decoration: none;
+            background-color: $light-blue-two;
+            padding: $padding-2*3 $padding-2*4;
+            border-radius: $border-r-2*3;
+            max-width: 97px;
+            min-width: 97px;
+            text-align: $t-center;
+        }
+    }
+
+    &:hover {
+        .not-assigned-content {
+            .assign-btn {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .assigned-title {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    .option-box {
+        position: $position-absolute;
+        min-width: 181px;
+        left: 50%;
+        top: 80%;
+        background-color: $white;
+        padding: $padding-2*4;
+        border-radius: 12px;
+        display: $display-none;
+        justify-content: $justify-start;
+        gap: 0;
+        flex-direction: $flex-column;
+        box-shadow: 0 0 32px 6px #1D185814;
+        z-index: 99;
+        transform: translateX(-50%);
+
+        li {
+            a {
+                display: $flex-display;
+                align-items: $align-center;
+                gap: $gap-2*4;
+                font-size: $font-14;
+                line-height: $line-h-20;
+                font-weight: $font-medium;
+                color: $blue;
+                padding: $padding-2*4 $padding-2*6;
+                border-radius: $border-r-5;
+
+                &:hover {
+                    background-color: $light-blue;
+
+                }
+
+                .export-icons {
+                    width: 20px;
+                    height: 20px;
+
+                    img {
+                        width: $w-100;
+                        height: $h-100;
+                        object-fit: $object-c;
+                    }
+                }
+            }
+        }
+    }
+
+    .assign-active {
+        display: $display-inline-block;
+    }
+
+    .assign-btn {
+        .fa-chevron-down {
+            transition: 0.3s;
+        }
+    }
+}
+
+.assign-col-active {
+    .assign-btn {
+        .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.stand-drivers {
+    td {
+        .driver-box {
+            border-color: #16AB6D;
+            background-color: #F0FAF5;
+        }
+
+        .add-drivers {
+            margin-bottom: $margin-2*2;
+
+            &:last-child {
+                margin-bottom: $margin-0;
+            }
+
+            .add-drivers-btn-1 {
+                background-color: $light-white;
+                padding: $padding-2*2 $padding-2*4;
+                border-radius: $border-r-2*3;
+                border: 1px solid #D4D9DE;
+                position: $position-relative;
+                transition: 0.3s;
+                min-width: 132px;
+                text-align: $t-center;
+                display: $inline-flex-display;
+                gap: $gap-2*2;
+                align-items: $align-center;
+                width: $w-100;
+                color: #344054;
+                font-size: $font-2*6;
+                line-height: $line-h-16;
+                font-weight: $font-medium;
+                justify-content: $justify-center;
+
+                .add-drivers-icon {
+                    display: $inline-flex-display;
+                    align-items: $align-center;
+                    justify-content: $justify-center;
+                }
+            }
+        }
+
+        .routes-option {
+            .routes-edit-option {
+                .routes-add {
+                    display: $display-none;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width:1280px) {
