@@ -28,6 +28,113 @@
   color: #61dafb;
 }
 
+.assign-option {
+  display: none;
+}
+
+.assign-active .assign-option {
+  display: block;
+}
+
+.drag-source {
+  background-color: #e6f7ff; /* light blue */
+}
+
+.drag-target {
+  background-color: #fff2e6; /* light orange */
+}
+
+/* Style for the item being dragged */
+.is-dragging {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Slightly enlarge to give a lift effect */
+}
+
+/* Consolidated styles for the destination <td> when a draggable item is hovered over it */
+td.droppable-highlight {
+  background-color: #1D1858 !important; /* The dark blue color for the drop zone */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Consolidated style for the source <td> from which the item is being dragged */
+td.draggable-source-highlight {
+  background-color: #E2E8F0 !important; /* A light grey for the source */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Consolidated rule to make all inner content transparent to show the <td>'s background color */
+td.droppable-highlight > div,
+td.droppable-highlight .routes-box,
+td.droppable-highlight .not-assigned-outer,
+td.draggable-source-highlight > div,
+td.draggable-source-highlight .routes-box,
+td.draggable-source-highlight .not-assigned-outer {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+ .placeholder-dnd {
+  height: 1px;
+     visibility: hidden;
+    pointer-events: none;
+ }
+
+ .empty-drop-zone {
+    /* Ensure the placeholder is visible and has a specific height */
+    min-height: 60px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+    cursor: pointer;
+}
+
+/* Optional: add some padding to make it easier to drop on */
+.draggable-item {
+    padding: 10px;
+}
+
+.invisible-drop-zone {
+  /* This makes the element transparent */
+  opacity: 0; 
+  
+  /* This maintains the element's space in the layout */
+  min-height: 10px;
+
+  /* This is to allow drag and drop on this element */
+  pointer-events: all !important;
+
+  /* Optional: Keep this for debugging to see the drop zone */
+  /* border: 2px dashed red; */
+}
+
+/* Make sure the parent `<td>` is a positioning context */
+.table-day-col {
+  position: relative;
+}
+
+/* Style the dropdown menu itself */
+.assign-option {
+  position: absolute;
+  top: 100%; /* Position the top of the menu just below the bottom of the "Click to assign" link */
+  left: 0; /* Align the left edge of the menu with the left edge of the parent <td> */
+  z-index: 10; /* Ensure the menu appears on top of other content */
+  /* Add other styles as needed, such as padding, background, border, etc. */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 8px;
+  list-style-type: none; /* Remove bullet points */
+  min-width: 150px; /* Ensure the menu has a minimum width */
+  display: none; /* Hide the menu by default */
+}
+
+.assign-option.active {
+  display: block; /* Show the menu when the 'active' class is applied */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
