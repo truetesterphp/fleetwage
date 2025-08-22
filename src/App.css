@@ -37,17 +37,18 @@
 }
 
 .drag-source {
-  background-color: #e6f7ff; /* light blue */
+  background-color: #7b87f5;  
 }
 
 .drag-target {
-  background-color: #fff2e6; /* light orange */
+  background-color: #1D1858;  
 }
 
 /* Style for the item being dragged */
 .is-dragging {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05); /* Slightly enlarge to give a lift effect */
+/*   box-shadow: 0px 4px 10px #00000033; */
+  background-color: #1D1858 !important;
+  transform: scale(1.05);  
 }
 
 /* Consolidated styles for the destination <td> when a draggable item is hovered over it */
@@ -58,7 +59,7 @@ td.droppable-highlight {
 
 /* Consolidated style for the source <td> from which the item is being dragged */
 td.draggable-source-highlight {
-  background-color: #E2E8F0 !important; /* A light grey for the source */
+  background-color: #7b87f5 !important;  
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -69,7 +70,6 @@ td.droppable-highlight .not-assigned-outer,
 td.draggable-source-highlight > div,
 td.draggable-source-highlight .routes-box,
 td.draggable-source-highlight .not-assigned-outer {
-  background-color: transparent !important;
   box-shadow: none !important;
 }
 
@@ -97,17 +97,10 @@ td.draggable-source-highlight .not-assigned-outer {
 }
 
 .invisible-drop-zone {
-  /* This makes the element transparent */
   opacity: 0; 
-  
-  /* This maintains the element's space in the layout */
-  min-height: 10px;
-
-  /* This is to allow drag and drop on this element */
+   min-height: 10px;
   pointer-events: all !important;
 
-  /* Optional: Keep this for debugging to see the drop zone */
-  /* border: 2px dashed red; */
 }
 
 /* Make sure the parent `<td>` is a positioning context */

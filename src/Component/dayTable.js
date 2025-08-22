@@ -48,7 +48,7 @@ const DragOverlayContent = ({ activeId, findPersonById }) => {
   if (!person) return null;
 
   const style = {
-    backgroundColor: person.class_type === 'driver-box' ? '#7b87f5' : '#ccc',
+    //backgroundColor: person.class_type === 'driver-box' ? '#7b87f5' : '#1D1858',
     padding: '8px 12px',
     borderRadius: '8px',
     cursor: 'grabbing',
@@ -753,7 +753,7 @@ const DayTable = ({ onAddRouteClick }) => {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> 
             )}
             {editingShift && (
               <EditShiftModal
