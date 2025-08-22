@@ -111,21 +111,25 @@ td.draggable-source-highlight .not-assigned-outer {
 /* Style the dropdown menu itself */
 .assign-option {
   position: absolute;
-  top: 100%; /* Position the top of the menu just below the bottom of the "Click to assign" link */
-  left: 0; /* Align the left edge of the menu with the left edge of the parent <td> */
-  z-index: 10; /* Ensure the menu appears on top of other content */
+  top: 100%; 
+  left: 0; 
+  z-index: 10; 
   /* Add other styles as needed, such as padding, background, border, etc. */
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   padding: 8px;
-  list-style-type: none; /* Remove bullet points */
-  min-width: 150px; /* Ensure the menu has a minimum width */
-  display: none; /* Hide the menu by default */
+  list-style-type: none;  
+  min-width: 150px;  
+  display: none;    
 }
 
 .assign-option.active {
-  display: block; /* Show the menu when the 'active' class is applied */
+  display: block;  
+}
+
+.draggable-item {
+  touch-action: none;
 }
 
 @keyframes App-logo-spin {

@@ -27,6 +27,7 @@ const SortableItem = ({ id, children, class_type }) => {
     transform: CSS.Transform.toString(transform),
     transition,
     opacity: isDragging ? 0 : 1,
+     touchAction: 'none',
   };
 
   return (
