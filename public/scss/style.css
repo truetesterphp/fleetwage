@@ -1110,261 +1110,6 @@ a {
   opacity: 1;
   visibility: visible;
 }
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box {
-  background-color: #F6F6F6;
-  padding: 4px 8px;
-  border-radius: 6px;
-  border: 1px solid #D4D9DE;
-  position: relative;
-  margin-bottom: 4px;
-  min-width: 132px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box:last-child {
-  margin-bottom: 0;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-box-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-box-content h6 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
-  color: #344054;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-box-content span {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  background-color: rgba(11, 8, 37, 0.4);
-  padding: 8px;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.3s;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li a {
-  width: 24px;
-  height: 24px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
-  border-radius: 4px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li a:hover {
-  background-color: #1D1858;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li a:hover img {
-  filter: brightness(1000);
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li .active-option {
-  background-color: #1D1858;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option li .active-option img {
-  filter: brightness(1000);
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-edit {
-  position: relative;
-  z-index: 9;
-  margin-right: 4px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-trash {
-  position: relative;
-  z-index: 9;
-  margin-right: 4px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .driver-routes-trash {
-  position: relative;
-  z-index: 9;
-  margin-right: 4px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-move {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-move a::before {
-  content: "";
-  background-color: red;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .routes-option .routes-edit-option .routes-add {
-  position: relative;
-  z-index: 9;
-  margin-left: 0px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box:hover .routes-option {
-  visibility: visible;
-  opacity: 1;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .routes-box .show-routes-option {
-  visibility: visible;
-  opacity: 1;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .manager-box {
-  border-color: #9D5DFE;
-  background-color: #F6F0FF;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .training-box {
-  border-color: #F1DE6A;
-  background-color: #FFFDF2;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned {
-  background-color: #FCEEF5;
-  color: #FC5371;
-  font-weight: 500;
-  vertical-align: middle;
-  position: relative;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .not-assigned-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9;
-  width: 100%;
-  height: 100%;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .not-assigned-content .assigned-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  transition: 0.3s;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .not-assigned-content .assigned-title h6 {
-  font-size: 12px;
-  font-weight: 500;
-  font-family: "Gilroy";
-  color: #FC5371;
-  line-height: 16px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: "Gilroy";
-  color: #ffffff;
-  line-height: 16px;
-  text-decoration: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  width: 100%;
-  height: 100%;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn span {
-  display: none;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn .assing-text {
-  display: block;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: "Gilroy";
-  color: #ffffff;
-  line-height: 16px;
-  text-decoration: none;
-  background-color: #4253F0;
-  padding: 6px 8px;
-  border-radius: 6px;
-  max-width: 97px;
-  min-width: 97px;
-  text-align: center;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned:hover .not-assigned-content .assign-btn {
-  opacity: 1;
-  visibility: visible;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned:hover .not-assigned-content .assigned-title {
-  opacity: 0;
-  visibility: hidden;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box {
-  position: absolute;
-  min-width: 181px;
-  left: 50%;
-  top: 80%;
-  background-color: #ffffff;
-  padding: 8px;
-  border-radius: 12px;
-  display: none;
-  justify-content: flex-start;
-  gap: 0;
-  flex-direction: column;
-  box-shadow: 0 0 32px 6px rgba(29, 24, 88, 0.0784313725);
-  z-index: 99;
-  transform: translateX(-50%);
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-  color: #1D1858;
-  padding: 8px 12px;
-  border-radius: 5px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a:hover {
-  background-color: #EBF0FE;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a .export-icons {
-  width: 20px;
-  height: 20px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .option-box li a .export-icons img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-active {
-  display: inline-block;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .not-assigned .assign-btn .fa-chevron-down {
-  transition: 0.3s;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody tr .assign-col-active .assign-btn .fa-chevron-down {
-  transform: rotate(180deg);
-}
 .dashboard-main .content .schedule-table .route-calendar tbody .add-routes-outer td .add-routes {
   border: 0px;
   background-color: transparent;
@@ -1380,43 +1125,6 @@ a {
 .dashboard-main .content .schedule-table .route-calendar tbody .add-routes-outer td .add-routes i {
   font-size: 16px;
   font-weight: 400;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .driver-box {
-  border-color: #16AB6D;
-  background-color: #F0FAF5;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers {
-  margin-bottom: 4px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers:last-child {
-  margin-bottom: 0px;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers .add-drivers-btn-1 {
-  background-color: #F6F6F6;
-  padding: 4px 8px;
-  border-radius: 6px;
-  border: 1px solid #D4D9DE;
-  position: relative;
-  transition: 0.3s;
-  min-width: 132px;
-  text-align: center;
-  display: inline-flex;
-  gap: 4px;
-  align-items: center;
-  width: 100%;
-  color: #344054;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
-  justify-content: center;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .add-drivers .add-drivers-btn-1 .add-drivers-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.dashboard-main .content .schedule-table .route-calendar tbody .stand-drivers td .routes-option .routes-edit-option .routes-add {
-  display: none;
 }
 .dashboard-main .content .schedule-table .week-table,
 .dashboard-main .content .schedule-table .day-table {
@@ -1812,6 +1520,314 @@ a {
   background-color: #e7e7e7 !important;
 }
 
+.routes-box-outer {
+  margin-bottom: 4px;
+}
+.routes-box-outer:last-child {
+  margin-bottom: 0;
+}
+
+.routes-box {
+  background-color: #F6F6F6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #D4D9DE;
+  position: relative;
+  margin-bottom: 4px;
+  min-width: 132px;
+}
+.routes-box:last-child {
+  margin-bottom: 0;
+}
+.routes-box .routes-box-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.routes-box .routes-box-content h6 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #344054;
+}
+.routes-box .routes-box-content span {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.routes-box .routes-option {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: rgba(11, 8, 37, 0.4);
+  padding: 8px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.routes-box .routes-option .routes-edit-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.routes-box .routes-option .routes-edit-option li {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.routes-box .routes-option .routes-edit-option li a {
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+.routes-box .routes-option .routes-edit-option li a:hover {
+  background-color: #1D1858;
+}
+.routes-box .routes-option .routes-edit-option li a:hover img {
+  filter: brightness(1000);
+}
+.routes-box .routes-option .routes-edit-option li .active-option {
+  background-color: #1D1858;
+}
+.routes-box .routes-option .routes-edit-option li .active-option img {
+  filter: brightness(1000);
+}
+.routes-box .routes-option .routes-edit-option .routes-edit {
+  position: relative;
+  z-index: 9;
+  margin-right: 4px;
+}
+.routes-box .routes-option .routes-edit-option .routes-trash {
+  position: relative;
+  z-index: 9;
+  margin-right: 4px;
+}
+.routes-box .routes-option .routes-edit-option .driver-routes-trash {
+  position: relative;
+  z-index: 9;
+  margin-right: 4px;
+}
+.routes-box .routes-option .routes-edit-option .routes-move {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.routes-box .routes-option .routes-edit-option .routes-move a::before {
+  content: "";
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.routes-box .routes-option .routes-edit-option .routes-add {
+  position: relative;
+  z-index: 9;
+  margin-left: 0px;
+}
+.routes-box:hover .routes-option {
+  visibility: visible;
+  opacity: 1;
+}
+.routes-box .show-routes-option {
+  visibility: visible;
+  opacity: 1;
+}
+
+.manager-box {
+  border-color: #9D5DFE;
+  background-color: #F6F0FF;
+}
+
+.training-box {
+  border-color: #F1DE6A;
+  background-color: #FFFDF2;
+}
+
+.not-assigned {
+  background-color: #FCEEF5;
+  color: #FC5371;
+  font-weight: 500;
+  vertical-align: middle;
+  position: relative;
+}
+.not-assigned .not-assigned-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+.not-assigned .not-assigned-content .assigned-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: 0.3s;
+}
+.not-assigned .not-assigned-content .assigned-title h6 {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Gilroy";
+  color: #FC5371;
+  line-height: 16px;
+}
+.not-assigned .assign-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Gilroy";
+  color: #ffffff;
+  line-height: 16px;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+}
+.not-assigned .assign-btn span {
+  display: none;
+}
+.not-assigned .assign-btn .assing-text {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Gilroy";
+  color: #ffffff;
+  line-height: 16px;
+  text-decoration: none;
+  background-color: #4253F0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  max-width: 97px;
+  min-width: 97px;
+  text-align: center;
+}
+.not-assigned:hover .not-assigned-content .assign-btn {
+  opacity: 1;
+  visibility: visible;
+}
+.not-assigned:hover .not-assigned-content .assigned-title {
+  opacity: 0;
+  visibility: hidden;
+}
+.not-assigned .option-box {
+  position: absolute;
+  min-width: 181px;
+  left: 50%;
+  top: 80%;
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  display: none;
+  justify-content: flex-start;
+  gap: 0;
+  flex-direction: column;
+  box-shadow: 0 0 32px 6px rgba(29, 24, 88, 0.0784313725);
+  z-index: 99;
+  transform: translateX(-50%);
+}
+.not-assigned .option-box li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #1D1858;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.not-assigned .option-box li a:hover {
+  background-color: #EBF0FE;
+}
+.not-assigned .option-box li a .export-icons {
+  width: 20px;
+  height: 20px;
+}
+.not-assigned .option-box li a .export-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.not-assigned .assign-active {
+  display: inline-block;
+}
+.not-assigned .assign-btn .fa-chevron-down {
+  transition: 0.3s;
+}
+
+.assign-col-active .assign-btn .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.stand-drivers td .routes-box {
+  margin-bottom: 4px;
+}
+.stand-drivers td .driver-box {
+  border-color: #16AB6D;
+  background-color: #F0FAF5;
+}
+.stand-drivers td .add-drivers {
+  margin-bottom: 4px;
+}
+.stand-drivers td .add-drivers:last-child {
+  margin-bottom: 0px;
+}
+.stand-drivers td .add-drivers .add-drivers-btn-1 {
+  background-color: #F6F6F6;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #D4D9DE;
+  position: relative;
+  transition: 0.3s;
+  min-width: 132px;
+  text-align: center;
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+  color: #344054;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  justify-content: center;
+}
+.stand-drivers td .add-drivers .add-drivers-btn-1 .add-drivers-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.stand-drivers td .routes-option .routes-edit-option .routes-add {
+  display: none;
+}
+
 @media (max-width: 1280px) {
   .dashboard-main .content .inner-content-main .inner-top-controls .left-controls {
     gap: 8px;
@@ -1878,7 +1894,9 @@ a {
     padding: 0px 15px;
     overflow-x: auto;
   }
-  .dashboard-main .content .inner-content-main > div {
+  .dashboard-main .content .inner-content-main .inner-top-controls,
+  .dashboard-main .content .inner-content-main .top-details-sec,
+  .dashboard-main .content .inner-content-main .schedule-table {
     min-width: 950px;
   }
   .dashboard-main .content .inner-content-main > div .manager {
@@ -1932,7 +1950,9 @@ a {
   .dashboard-main .content .inner-content-main .inner-top-controls .right-controls ul .filter-col .filter-form {
     min-width: 330px;
   }
-  .dashboard-main .content .inner-content-main > div {
+  .dashboard-main .content .inner-content-main .inner-top-controls,
+  .dashboard-main .content .inner-content-main .top-details-sec,
+  .dashboard-main .content .inner-content-main .schedule-table {
     min-width: 870px;
   }
   .dashboard-main .content .inner-content-main .manager {

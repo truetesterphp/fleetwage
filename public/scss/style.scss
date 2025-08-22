@@ -2123,6 +2123,15 @@ a {
 }
 
 // 
+
+.routes-box-outer {
+    margin-bottom: $margin-2*2;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .routes-box {
     background-color: $light-white;
     padding: $padding-2*2 $padding-2*4;
@@ -2222,7 +2231,7 @@ a {
                 margin-right: 4px;
             }
 
-            .driver-routes-trash{
+            .driver-routes-trash {
                 position: relative;
                 z-index: 9;
                 margin-right: 4px;
@@ -2444,6 +2453,11 @@ a {
 
 .stand-drivers {
     td {
+
+        .routes-box {
+            margin-bottom: $margin-2*2;
+        }
+
         .driver-box {
             border-color: #16AB6D;
             background-color: #F0FAF5;
@@ -2590,8 +2604,13 @@ a {
                 padding: $padding-0 $padding-5*3;
                 overflow-x: $overflow-a;
 
-                >div {
+                .inner-top-controls,
+                .top-details-sec,
+                .schedule-table {
                     min-width: 950px;
+                }
+
+                >div {
 
                     .manager {
                         width: 208px;
@@ -2614,6 +2633,7 @@ a {
                         width: $w-100;
                     }
                 }
+
             }
         }
 
@@ -2673,7 +2693,9 @@ a {
                 }
 
 
-                >div {
+                .inner-top-controls,
+                .top-details-sec,
+                .schedule-table {
                     min-width: 870px;
                 }
 
