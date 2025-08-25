@@ -27,7 +27,7 @@ const SortableItem = ({ id, children, class_type }) => {
     transform: CSS.Transform.toString(transform),
     transition,
     opacity: isDragging ? 0 : 1,
-     touchAction: 'none',
+    touchAction: 'none',
   };
 
   return (
@@ -365,26 +365,20 @@ const DayTable = ({ onAddRouteClick }) => {
   // Effect to handle clicks outside the menu
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      // Check if the menu is open and the click is outside the menu and the button
-      if (
-        unassignedMenuId &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target)
-      ) {
+      const clickedMenu = menuRef.current?.contains(event.target);
+      const clickedButton = buttonRef.current?.contains(event.target);
+
+      if (!clickedMenu && !clickedButton) {
         setUnassignedMenuId(null);
       }
     };
 
-    // Add event listener when the menu is open
     document.addEventListener('mousedown', handleOutsideClick);
-
-    // Clean up the event listener when the component unmounts or menu closes
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
-  }, [unassignedMenuId]);
+  }, []);
+
 
   const [incentive, setIncentive] = useState('$25');
   const [notes, setNotes] = useState('About 220 Stop mostly Residential');
@@ -393,6 +387,10 @@ const DayTable = ({ onAddRouteClick }) => {
 
   const handleOpenShiftForm = () => {
     setShowOpenShiftForm(true);
+  };
+
+  const handleCloseShiftForm = () => {
+    setShowOpenShiftForm(false);
   };
 
   const handleCloseOpenShiftForm = () => {
@@ -422,8 +420,39 @@ const DayTable = ({ onAddRouteClick }) => {
     // Logic to save the edited shift data
     handleCloseEditShiftModal(); // Close the modal after saving
   };
+  /* Add route form */
+  const openAddRouteForm = () => setAddRouteFormOpen(true);
+  const [isAddRouteFormOpen, setAddRouteFormOpen] = useState(false);
+    const [checkedDays, setCheckedDays] = useState(
+        { all: false, sat: false, sun: false, mon: false, tue: false, wed: false, thu: false, fri: false, }
+    );
+    const handleDayChange = (day) => {
+        const updated = {
+            ...checkedDays,
+            [day]: !checkedDays[day],
+        };
+        const allChecked = ["sat", "sun", "mon", "tue", "wed", "thu", "fri"].every(
+            (d) => d === day ? !checkedDays[d] : checkedDays[d]
+        );
+        updated.all = allChecked;
+        setCheckedDays(updated);
+    };
 
+    const handleAllChange = () => {
+        const newValue = !checkedDays.all;
+        setCheckedDays({
+            all: newValue, sat: newValue, sun: newValue, mon: newValue, tue: newValue, wed: newValue, thu: newValue, fri: newValue,
+        });
+    };
 
+  const stopDragHandler = (e) => {
+    e.stopPropagation();
+  };
+
+const handleDelete = (e, name) => {
+  e.stopPropagation();
+  alert(`Delete clicked for ${name}`);
+};
 
   return (
     <div className="day-table day-table-show">
@@ -504,7 +533,7 @@ const DayTable = ({ onAddRouteClick }) => {
                                   </a>
                                 </li>
                                 <li className="routes-trash">
-                                  <a href="#">
+                                 <a href="#" title="Delete" onClick={(e) => handleDelete(e, person.name)} onPointerDown={stopDragHandler}>
                                     <img src={`${process.env.PUBLIC_URL}/images/trash.png`} alt="" />
                                   </a>
                                 </li>
@@ -525,10 +554,12 @@ const DayTable = ({ onAddRouteClick }) => {
                                 </div>
                                 <a
                                   href="#"
+                                  ref={buttonRef}
                                   className="assign-btn"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    setUnassignedMenuId(unassignedMenuId === route.id ? null : route.id);
+                                    // setUnassignedMenuId(unassignedMenuId === route.id ? null : route.id);
+                                    setUnassignedMenuId(prev => (prev === route.id ? null : route.id));
                                   }}
                                 >
                                   <span className="assing-text">Click to assign</span>
@@ -544,7 +575,7 @@ const DayTable = ({ onAddRouteClick }) => {
                       )}
                     </SortableContext>
                     {unassignedMenuId === route.id && (
-                      <ul className="assign-option option-box active">
+                      <ul className="assign-option option-box active" ref={menuRef}>
                         <li className="add-employee-option">
                           <a href="#" className="btn-add-employe" onClick={handleOpenForm}>
                             <span className="employee-icons">
@@ -581,6 +612,17 @@ const DayTable = ({ onAddRouteClick }) => {
                 </tr>
               );
             })}
+            <tr className="add-routes-outer">
+              <td colSpan="8">
+                <button
+                  className="add-routes"
+                  onClick={() => setAddRouteFormOpen(true)}
+                >
+                  <span><i className="fa-solid fa-plus"></i></span>
+                  Add Routes
+                </button>
+              </td>
+            </tr>
             <tr className="stand-drivers droppable-area1">
               <td className="routes-col stand-drivers-col ">
                 <div className="routes-col-row">
@@ -646,7 +688,7 @@ const DayTable = ({ onAddRouteClick }) => {
                             </a>
                           </li>
                           <li className="routes-trash">
-                            <a href="#">
+                            <a href="#" title="Delete" onClick={(e) => handleDelete(e, driver.name)} onPointerDown={stopDragHandler}>
                               <img src={`${process.env.PUBLIC_URL}/images/trash.png`} alt="" />
                             </a>
                           </li>
@@ -722,7 +764,7 @@ const DayTable = ({ onAddRouteClick }) => {
                     <div className="form-modal-inner">
                       <div className="form-header">
                         <h2>Open Shift</h2>
-                        <button type="button" className="close-btn" onClick={handleCloseOpenShiftForm}>
+                        <button type="button" className="close-btn" onClick={handleCloseShiftForm}>
                           <i className="fa-solid fa-xmark"></i>
                         </button>
                       </div>
@@ -754,7 +796,96 @@ const DayTable = ({ onAddRouteClick }) => {
                     </div>
                   </form>
                 </div>
-              </div> 
+              </div>
+            )}
+            {isAddRouteFormOpen && (
+              <div className="form-outer add-route-form show-form">
+                <div className="form-overlay">
+                  <form action="" className="form-modal">
+                    <div className="form-modal-inner">
+                      <div className="form-header">
+                        <h2>Add Route</h2>
+                        <button
+                          className="close-btn"
+                          type="button"
+                          onClick={() => setAddRouteFormOpen(false)}
+                        >
+                          <i className="fa-solid fa-xmark"></i>
+                        </button>
+                      </div>
+
+                      <div className="form-body">
+                        <div className="add-route-content">
+                          <div className="form-row">
+                            <div className="form-group">
+                              <label htmlFor="route">Route</label>
+                              <select id="route" name="route">
+                                <option>345</option>
+                              </select>
+                            </div>
+                            <div className="form-group">
+                              <label htmlFor="type">Type</label>
+                              <select id="type" name="type">
+                                <option>Bulk</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="form-group schedule-group">
+                            <label htmlFor="schedule">Schedule</label>
+                            <ul className="chack-box-outer">
+                              <li className="chack-col all-chack">
+                                <input
+                                  type="checkbox"
+                                  className="all"
+                                  checked={checkedDays.all}
+                                  onChange={handleAllChange}
+                                />
+                                <span className="checkmark all-label"></span>
+                                <span>All</span>
+                              </li>
+                              {["sat", "sun", "mon", "tue", "wed", "thu", "fri"].map((day) => (
+                                <li className="chack-col" key={day}>
+                                  <input
+                                    type="checkbox"
+                                    id={day}
+                                    className="day-checkbox"
+                                    checked={checkedDays[day]}
+                                    onChange={() => handleDayChange(day)}
+                                  />
+                                  <span className="checkmark day-label"></span>
+                                  <span>{day.charAt(0).toUpperCase() + day.slice(1)}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="notes">Notes</label>
+                            <textarea
+                              id="notes"
+                              name="notes"
+                              rows="2"
+                              defaultValue="About 220 Stop mostly Residential"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="form-footer">
+                        <button
+                          type="button"
+                          className="light-btn cancel-btn"
+                          onClick={() => setAddRouteFormOpen(false)}
+                        >
+                          Cancel
+                        </button>
+                        <button className="dark-btn add-route-btn" type="submit">
+                          Add Route
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
             )}
             {editingShift && (
               <EditShiftModal

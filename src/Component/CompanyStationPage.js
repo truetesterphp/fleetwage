@@ -167,6 +167,9 @@ export default function App() {
     const sensors = useSensors(useSensor(PointerSensor));
     const [overId, setOverId] = useState(null);
 
+
+    const [droppedCellId, setDroppedCellId] = useState(null);
+
     const handleDragStart = (event) => {
         setActiveId(event.active.id);
         const [, fromCell] = event.active.id.split('|');
@@ -180,48 +183,46 @@ export default function App() {
         }
     };
 
-    const handleDragEnd = (event) => {
-        const { active, over } = event;
-        setActiveId(null);
-        setOverId(null);
+const handleDragEnd = (event) => {
+  const { active, over } = event;
+  setActiveId(null);
+  setOverId(null);
 
-        if (!over) return;
+  if (!over) return;
 
-        const [, fromCell] = active.id.split('|');
-        const [, toCell] = over.id.split('|');
+  const [, fromCell] = active.id.split('|');
+  const [, toCell] = over.id.split('|');
 
-        // Same cell, no movement needed
-        if (fromCell === toCell) return;
+  if (fromCell === toCell) return;
 
-        setItemsByCell((prev) => {
-            const draggedItem = prev[fromCell]?.find(i => i.id === active.id);
-            if (!draggedItem) return prev;
+  setItemsByCell((prev) => {
+    const draggedItem = prev[fromCell]?.find(i => i.id === active.id);
+    if (!draggedItem) return prev;
 
-            const newState = { ...prev };
+    const newState = { ...prev };
 
-            // Remove from source cell
-            newState[fromCell] = prev[fromCell].filter(i => i.id !== active.id);
+    newState[fromCell] = prev[fromCell].filter(i => i.id !== active.id);
 
-            // Extract original item ID (before `|cellId`)
-            const [baseItemId] = active.id.split('|');
+    const [baseItemId] = active.id.split('|');
 
-            // Create a new item with updated ID for the new cell
-            const newItem = {
-                ...draggedItem,
-                id: `${baseItemId}|${toCell}`
-            };
-
-            // Add to destination cell
-            newState[toCell] = [
-                ...(prev[toCell] || []),
-                newItem
-            ];
-
-            return newState;
-        });
-
-        setActiveItem(null);
+    const newItem = {
+      ...draggedItem,
+      id: `${baseItemId}|${toCell}`
     };
+
+    newState[toCell] = [...(prev[toCell] || []), newItem];
+
+    return newState;
+  });
+
+  setDroppedCellId(toCell); //   Track the cell where the item was dropped
+
+  // Reset highlight after 1 second
+  setTimeout(() => setDroppedCellId(null), 1000);
+
+  setActiveItem(null);
+};
+
 
     /* add shift employee form dispatch route */
     const [showAddShiftAddEmployee, setShowAddShiftAddEmployee] = useState(false);
@@ -252,6 +253,10 @@ export default function App() {
 
     /* open shift form */
 
+    /* publish form */
+    const [showpublishForm, setshowpublishForm] = useState(false);
+    /* publish form */
+
     const [editItem, setEditItem] = useState(null);
     const [editRoute, setEditRoute] = useState(null);
     const [showAddEmployee, setShowAddEmployee] = useState(false);
@@ -260,6 +265,7 @@ export default function App() {
     const [filterOpen, setFilterOpen] = useState(false);
     const [smartOpen, setSmartOpen] = useState(false);
     const [activeAssignCell, setActiveAssignCell] = useState(null);
+    
 
     return (
 
@@ -401,11 +407,20 @@ export default function App() {
                                             </a>
                                         </li>
                                         <li className="publish">
-                                            <a href="#">
-                                                <span className="export-icons"><img src={`${process.env.PUBLIC_URL}/images/Iconmegaphone-01.png`} alt="" /></span>
+                                            <a
+                                                href="#"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setshowpublishForm(true); // ✅ Show the form on click
+                                                }}
+                                            >
+                                                <span className="export-icons">
+                                                    <img src={`${process.env.PUBLIC_URL}/images/Iconmegaphone-01.png`} alt="" />
+                                                </span>
                                                 Publish
                                             </a>
                                         </li>
+
                                     </ul>
                                 </li>
                             </ul>
@@ -539,10 +554,10 @@ export default function App() {
                                                             const cellClassType = cellItems.length > 0 && cellItems[0].class_type ? cellItems[0].class_type : '';
                                                             const isOver = overId === `cell|${cellId}`;
                                                             const isDraggingFromHere = activeId?.split('|')[1] === cellId;
-
+                                                            const isDroppedHere = droppedCellId === cellId;
                                                             const defaultStyle = {
 
-                                                                minHeight: 60,
+                                                                minHeight: 50,
 
                                                                 backgroundColor: isOver
                                                                     ? '#1D1858'
@@ -561,7 +576,7 @@ export default function App() {
                                                                     : defaultStyle;
                                                             return (
 
-                                                                <td data-cell-id={`${cellId}`} className={`${cellClassType === 'not-assigned-outer' ? 'cellClassType' : ''} ${cellClassType === 'blank-col' ? 'blank-col' : ''}  draggable-item`}
+                                                                <td data-cell-id={`${cellId}`} className={`${cellClassType === 'not-assigned-outer' ? 'cellClassType' : ''} ${cellClassType === 'blank-col' ? 'blank-col' : ''}  draggable-item ${isDroppedHere ? 'highlight-drop' : ''}`}
                                                                     key={cellId}
                                                                     style={defaultStyle}
                                                                 >
@@ -799,7 +814,7 @@ export default function App() {
                                             <div className="form-modal-inner">
                                                 <div className="form-header">
                                                     <h2>Open Shift</h2>
-                                                    <button type="button" className="close-btn"><i className="fa-solid fa-xmark"></i></button>
+                                                    <button type="button" className="close-btn" onClick={handleCancel}><i className="fa-solid fa-xmark"></i></button>
                                                 </div>
                                                 <div className="form-body">
                                                     <div className="open-shift-content">
@@ -828,46 +843,63 @@ export default function App() {
                                 </div>
                             )}
 
-                            {/* open publish form */}
-                            <div className="form-outer publish-shift-form show-form">
-                                <div className="form-overlay">
-                                    <form action="" className="form-modal">
-                                        <div className="form-modal-inner">
-                                            <div className="form-header">
-                                                <h2>Publish Shift</h2>
-                                                <button className="close-btn">
-                                                    <i className="fa-solid fa-xmark"></i>
-                                                </button>
-                                            </div>
-                                            <div className="form-body">
-                                                <div className="publish-shift-content">
-                                                    <h3>Send New Schedule</h3>
-                                                    <p>The Updated schedule will be sent to all employees.</p>
-                                                    <div className="notification-options">
-                                                        <p className="notification-title">Notification will be sent via:</p>
-                                                        <ul className="chack-box-outer">
-                                                            <li className="chack-col">
-                                                                <input type="checkbox" />
-                                                                <span className="checkmark"></span>
-                                                                <span>Email</span>
-                                                            </li>
-                                                            <li className="chack-col">
-                                                                <input type="checkbox" />
-                                                                <span className="checkmark"></span>
-                                                                <span>text</span>
-                                                            </li>
-                                                        </ul>
+                            {/* Publish Shift */}
+                            {showpublishForm && (
+                                <div className="form-outer publish-shift-form show-form">
+                                    <div className="form-overlay">
+                                        <form className="form-modal">
+                                            <div className="form-modal-inner">
+                                                <div className="form-header">
+                                                    <h2>Publish Shift</h2>
+                                                    <button
+                                                        type="button"
+                                                        className="close-btn"
+                                                        onClick={() => setshowpublishForm(false)} // ✅ Close form
+                                                    >
+                                                        <i className="fa-solid fa-xmark"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div className="form-body">
+                                                    <div className="publish-shift-content">
+                                                        <h3>Send New Schedule</h3>
+                                                        <p>The Updated schedule will be sent to all employees.</p>
+
+                                                        <div className="notification-options">
+                                                            <p className="notification-title">Notification will be sent via:</p>
+                                                            <ul className="chack-box-outer">
+                                                                <li className="chack-col">
+                                                                    <input type="checkbox" id="email" />
+                                                                    <span className="checkmark"></span>
+                                                                    <span>Email</span>
+                                                                </li>
+                                                                <li className="chack-col">
+                                                                    <input type="checkbox" id="text" />
+                                                                    <span className="checkmark"></span>
+                                                                    <span>Text</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
+
+                                                <div className="form-footer">
+                                                    <button
+                                                        type="button"
+                                                        className="light-btn cancel-btn"
+                                                        onClick={() => setshowpublishForm(false)} // ✅ Close form
+                                                    >
+                                                        Cancel
+                                                    </button>
+                                                    <button type="submit" className="dark-btn confirm-btn">
+                                                        Confirm
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div className="form-footer">
-                                                <button className="light-btn cancel-btn">Cancel</button>
-                                                <button className="dark-btn confirm-btn" type="submit">Confirm</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
 
                         </div>
